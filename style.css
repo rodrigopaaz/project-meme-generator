@@ -2,3 +2,19 @@
     background: green;
 
 }
+
+#meme-image{
+    overflow: none;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+#meme-image-container{
+    height: 250px;
+    width: 250px;
+
+}
