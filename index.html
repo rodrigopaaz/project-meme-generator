@@ -7,13 +7,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <form id="wordMeme"><input type="text" id="text-input"></form>
-    <form id="image" method="post" enctype="multipart/form-data"><input name = 'imagem' type="file" id="meme-insert" onchange="carregaImagem()">
-    <img style="width:150px; height: 150px;"></form>
-    <div id="meme-image-container"><h1 id="meme-text"></h1><div id="meme-image"><img></div></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script src="script.js"></script>   
+<body>  
+    <script>
+      var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+          var output = document.getElementById('image');
+          output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      };
+    </script>
+    <form id="wordMeme"><input type="text" id="text-input"></form><br><br>
+   <div><input type="file" name="img" id="meme-insert" type="file" accept="image/*" onchange="loadFile(event)"/>
+        <div id="meme-image-container"><img id="image"><h1 id="meme-text"></h1></div><div id="meme-image"></div></div>
+    <script src="script.js"></script>   
 </body>
 </html>

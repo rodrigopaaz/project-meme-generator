@@ -9,19 +9,3 @@ function addTitle(event) {
     titulo.innerHTML = sessionStorage.word
   }
   input.addEventListener('keyup', addTitle)
-
-  //parte 2
-
-function carregaImagem(){
- var imagem = document.querySelector('input[name=imagem]').files[0];
- var preview = document.querySelector('img')
- var reader = new FileReader();
-
- reader.onloadend = function (){
-        preview.src = reader.result;
-            console.log(reader.readAsDataURL(imagem))
-    inputImage.addEventListener('onchange', carregaImagem)
- }
-}
-
-  
