@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>  
-    <script>
+     <script>
       var loadFile = function(event) {
         var reader = new FileReader();
         reader.onload = function(){
@@ -18,9 +18,12 @@
         reader.readAsDataURL(event.target.files[0]);
       };
     </script>
-    <form id="wordMeme"><input type="text" id="text-input"></form><br><br>
+     <div><button id="fire">Fire</button>
+      <button id="water">Water</button>
+      <button id="earth">Earth</button></div>
+    <form id="wordMeme"><input type="text" maxlength="60" id="text-input"></form><br><br>
    <div><input type="file" name="img" id="meme-insert" type="file" accept="image/*" onchange="loadFile(event)"/>
-        <div id="meme-image-container"><img id="image"><h1 id="meme-text"></h1></div><div id="meme-image"></div></div>
-    <script src="script.js"></script>   
+        <div id="meme-image-container"><h1 id="meme-text"></h1><img id="image"></div><div id="meme-image"></div></div>
+        <script src="script.js"></script>   
 </body>
 </html>
