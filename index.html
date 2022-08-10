@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>  
-     <script>
-      var loadFile = function(event) {
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      var loadFile = function (event) {
         var reader = new FileReader();
-        reader.onload = function(){
-          var output = document.getElementById('image');
+        reader.onload = function () {
+          var output = document.getElementById("meme-image");
           output.src = reader.result;
         };
         reader.readAsDataURL(event.target.files[0]);
       };
     </script>
-     <div><button id="fire">Fire</button>
-      <button id="water">Water</button>
-      <button id="earth">Earth</button></div>
-    <form id="wordMeme"><input type="text" maxlength="60" id="text-input"></form><br><br>
-   <div><input type="file" name="img" id="meme-insert" type="file" accept="image/*" onchange="loadFile(event)"/>
-        <div id="meme-image-container"><h1 id="meme-text"></h1><img id="image"></div><div id="meme-image"></div></div>
-        <script src="script.js"></script>   
-</body>
+
+    <form id="wordMeme">
+      <input type="text" maxlength="60" id="text-input" />
+    </form>
+    <br /><br />
+    <div>
+      <div id="miniaturas">
+        <img src="imgs/meme1.png" alt="" id="meme-1">
+        <img src="imgs/meme2.png" alt="" id="meme-2">
+        <img src="imgs/meme3.png" alt=""id="meme-3">
+        <img src="imgs/meme4.png" alt=""id="meme-4">
+      </div>
+      <div>
+        <button id="fire">Fire</button>
+        <button id="water">Water</button>
+        <button id="earth">Earth</button>
+      </div>
+ 
+      <input
+        type="file"
+        name="img"
+        id="meme-insert"
+        type="file"
+        accept="image/*"
+        onchange="loadFile(event)"
+      />
+      <div id="meme-image-container">
+        <p id="meme-text"></p>
+        <img id="meme-image" />
+      </div>
+      <div id="meme-image2"></div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
 </html>
